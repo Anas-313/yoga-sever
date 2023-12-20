@@ -1,8 +1,5 @@
 
 import userCollection from "../Models/user.js"
-// import * as dotenv from 'dotenv';
-// import transporter from "../service/transporter.js";
-// dotenv.config(); 
 
 export default {
   onCreateUser: async (req, res) => {
@@ -37,26 +34,6 @@ export default {
         batchNumber: batchNumber,
       });
       const user = await userData.save();
-    //   var mailOptions = {
-    //       from: ' "Hii... " <pseudopsy0@gmail.com> ',
-    //       to: user.email,
-    //       subject: `Welome ${user.name} to yoga classes`,
-    //       html: `
-    //       <h2> Hii ${user.name} ! Welcome to yoga classes<h2> 
-    //       <h3> your payment is complete!</h3>
-    //           <img src="https://pngimg.com/uploads/yoga/small/yoga_PNG104.png"> 
-
-    //             <h4> Your yoga classes will start from ${user.startDate} and your batch number is ${user.batchNumber} ....</h4>
-    //             <button type="button">Click to continue</button>
-    //             `,
-    //     };
-        // transporter.sendMail(mailOptions, function (error, info) {
-        //   if (error) {
-        //     console.log(error);
-        //   } else {
-        //     console.log("Veification mail sent to your gmail account");
-        //   }
-        // });
 
       return res.status(200).json({"message":"successfull","data":user,"message_id":"3"});
     } catch (error) {

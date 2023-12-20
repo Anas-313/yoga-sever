@@ -2,12 +2,10 @@ import dotenv from "dotenv";
 import mongoose from "mongoose"
 import userRouter from "./Routes/userRoute.js"
 import paymentRouter from "./Routes/paymentRoute.js"
-
+import express from "express";
 import CORS from "cors"
 
 dotenv.config();
-
-import express from "express";
 
 const app = express()
 
@@ -16,9 +14,6 @@ app.use(express.json())
 
 app.use("/user",userRouter)
 app.use("/payment",paymentRouter)
-
-
-
 
 app.use('/', async (req, res) => {
     return res.json({ "welcome Yogo Application": "yoga" })
